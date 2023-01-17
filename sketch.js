@@ -59,19 +59,6 @@ function draw() {
   text("**Use arrow keys to move Hot Air Balloon!",40,40);
 }
 
- function updateHeight(x,y){
-   database.ref('balloon/height').set({
-     'x': height.x + x ,
-     'y': height.y + y
-   })
- }
-
-
-//CHOOSE THE CORRECT READHEIGHT FUNCTION
-// function readHeight(data){
-//   balloon.x = height.x;
-//   balloon.y = height.y;
-// }
 
  function readHeight(data){
   height = data.val();
@@ -81,6 +68,12 @@ function draw() {
  }
 
 
+ function updateHeight(x,y){
+   database.ref('balloon/height').set({
+     'x': height.x + x ,
+     'y': height.y + y
+   })
+ }
 
 function showError(){
   console.log("Error in writing to the database");
